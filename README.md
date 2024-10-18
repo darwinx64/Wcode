@@ -1,6 +1,6 @@
-# Zcode
+# Wcode
 
-A texteditor using Xcode's private DVT frameworks.
+welcome to the 4th dimension of programming
 
 ## Preview
 
@@ -12,11 +12,22 @@ A texteditor using Xcode's private DVT frameworks.
     </picture>
 </p>
 
-## Why make Zcode?
-
-I wanted to write [Ycode](https://github.com/asentientbot/ycode) in swift rather than have it in Objective-C, so I went ahead and did that for learning purposes.
-
 ## Build
 
-- Run `make package`
-- This will output to `packages`, drag it into `/Applications`
+```sh
+git clone https://github.com/darwinx64/Wcode.git
+cd Wcode-main
+xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+open ./packages
+```
+
+1. Clone
+2. CD
+3. Build without signing (or do)
+4. Open the build dir in finder
+
+Alternatively, a one-liner
+
+```sh
+git clone https://github.com/darwinx64/Wcode.git; cd Wcode-main; xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO; open ./packages
+```

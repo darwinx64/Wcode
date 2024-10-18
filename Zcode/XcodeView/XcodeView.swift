@@ -1,6 +1,6 @@
 //
 //  XcodeView.swift
-//  Zcode
+//  Wcode
 //
 //  Created by samara on 1/23/24.
 //
@@ -99,18 +99,16 @@ class XcodeView: DVTSourceTextScrollView {
             rulersVisible = true
             
         }
-
-
     }
     
     @objc func undo() {
         self.codeView.undoManager?.undo()
     }
-
+    
     @objc func redo() {
         self.codeView.undoManager?.redo()
     }
-
+    
     @objc func validateUserInterfaceItem(_ item: NSValidatedUserInterfaceItem) -> Bool {
         if item.action == #selector(undo) {
             return self.codeView.undoManager?.canUndo ?? false
@@ -136,8 +134,57 @@ class XcodeView: DVTSourceTextScrollView {
         }
     }
     
+    private var widthConstraint: NSLayoutConstraint?
     
-    deinit { print("XcodeView: deinnit") }
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        
+        if let window = self.window {
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(windowDidResize(_:)),
+                                                   name: NSWindow.didResizeNotification,
+                                                   object: window)
+            setupConstraints()
+        }
+    }
+    
+    private func setupConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        
+        updateWidthConstraint()
+
+        if let superview = self.superview {
+            NSLayoutConstraint.activate([
+                self.topAnchor.constraint(equalTo: superview.topAnchor),
+                self.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
+            ])
+        }
+    }
+    
+    @objc private func windowDidResize(_ notification: Notification) {
+        updateWidthConstraint()
+    }
+    
+    private func updateWidthConstraint() {
+        guard let window = self.window else { return }
+
+        if let oldConstraint = widthConstraint {
+            oldConstraint.isActive = false
+            self.removeConstraint(oldConstraint)
+        }
+
+        let newWidth = window.frame.size.width / 2.0
+        widthConstraint = self.widthAnchor.constraint(equalToConstant: newWidth)
+
+        if let widthConstraint = widthConstraint {
+            widthConstraint.isActive = true
+        }
+
+        self.needsLayout = true
+    }
+    
+    
+    deinit { print("XcodeView: deinnit"); NotificationCenter.default.removeObserver(self, name: NSWindow.didResizeNotification, object: nil) }
 }
 
 #warning("Credit where its due: https://gist.github.com/nil-biribiri/67f158c8a93ff0a5d8c99ff41d8fe3bd")

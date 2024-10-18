@@ -1,6 +1,6 @@
 //
-//  ZcodeApp.swift
-//  Zcode
+//  WcodeApp.swift
+//  Wcode
 //
 //  Created by samara on 1/23/24.
 //
@@ -95,18 +95,18 @@ extension AppDelegate {
         let menu = NSMenu()
         
         // MARK: - App
-        let Zcode = NSMenu()
-        Zcode.addItem(withTitle: "About Zcode", action: #selector(aboutPanel), keyEquivalent: "")
+        let Wcode = NSMenu()
+        Wcode.addItem(withTitle: "About Wcode", action: #selector(aboutPanel), keyEquivalent: "")
         
-        Zcode.addItem(NSMenuItem.separator())
-        Zcode.addItem(withTitle: "Settings...", action: #selector(settingsPanel), keyEquivalent: ",")
+        Wcode.addItem(NSMenuItem.separator())
+        Wcode.addItem(withTitle: "Settings...", action: #selector(settingsPanel), keyEquivalent: ",")
         
-        Zcode.addItem(NSMenuItem.separator())
-        Zcode.addItem(withTitle: "Quit", action: #selector(AppDelegate.quit), keyEquivalent: "q")
+        Wcode.addItem(NSMenuItem.separator())
+        Wcode.addItem(withTitle: "Quit", action: #selector(AppDelegate.quit), keyEquivalent: "q")
         
-        let ZcodeItem = NSMenuItem()
-        ZcodeItem.submenu = Zcode
-        menu.addItem(ZcodeItem)
+        let WcodeItem = NSMenuItem()
+        WcodeItem.submenu = Wcode
+        menu.addItem(WcodeItem)
         
         // MARK: - File
         let fileMenu = NSMenu()

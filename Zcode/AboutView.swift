@@ -1,6 +1,6 @@
 //
 //  SwiftUIView.swift
-//  Zcode
+//  Wcode
 //
 //  Created by samara on 1/25/24.
 //
@@ -71,7 +71,7 @@ struct AboutView: View {
     }
     
     func showWebsite() {
-        let website = URL(string: "https://github.com/ssalggnikool/Zcode")!
+        let website = URL(string: "https://github.com/ssalggnikool/Wcode")!
         NSWorkspace.shared.open(website)
     }
 }
