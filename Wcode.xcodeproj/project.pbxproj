@@ -14,10 +14,10 @@
 		33A9E1D12B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1D02B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift */; };
 		33A9E1D62B611B33005F85CD /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1D52B611B33005F85CD /* WindowController.swift */; };
 		33D5E1E72B60B96E00B9BD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */; };
-		33D5E1EB2B60B96F00B9BD84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33D5E1EA2B60B96F00B9BD84 /* Assets.xcassets */; };
 		33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */; };
 		33D5E21C2B60D68B00B9BD84 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D5E21B2B60D68A00B9BD84 /* DVTKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		33DBAF1D2B6390CE00A4ADCE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBAF1C2B6390CE00A4ADCE /* AboutView.swift */; };
+		A25CAE2A2CC2F85700EE586F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25CAE292CC2F85700EE586F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		33A9E1D52B611B33005F85CD /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		33D5E1E32B60B96E00B9BD84 /* Wcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33D5E1EA2B60B96F00B9BD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		33D5E1EF2B60B96F00B9BD84 /* Zcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zcode.entitlements; sourceTree = "<group>"; };
+		33D5E1EF2B60B96F00B9BD84 /* Wcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wcode.entitlements; sourceTree = "<group>"; };
 		33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/xcode/Xcode-14.3.1.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
 		33D5E21B2B60D68A00B9BD84 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = "../../../../Applications/xcode/Xcode-14.3.1.app/Contents/SharedFrameworks/DVTKit.framework"; sourceTree = "<group>"; };
 		33D5E2242B60D93200B9BD84 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		33DBAF1C2B6390CE00A4ADCE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		A25CAE292CC2F85700EE586F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +84,7 @@
 				33A9E1CA2B60E0E5005F85CD /* LICENSE */,
 				33A9E1D22B611710005F85CD /* Makefile */,
 				33A9E1CB2B60E101005F85CD /* packages */,
-				33D5E1E52B60B96E00B9BD84 /* Zcode */,
+				33D5E1E52B60B96E00B9BD84 /* Wcode */,
 				33D5E1E42B60B96E00B9BD84 /* Products */,
 				33D5E1F52B60CA8400B9BD84 /* Frameworks */,
 			);
@@ -98,7 +98,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		33D5E1E52B60B96E00B9BD84 /* Zcode */ = {
+		33D5E1E52B60B96E00B9BD84 /* Wcode */ = {
 			isa = PBXGroup;
 			children = (
 				3348C0ED2B614FE300764DD9 /* Info.plist */,
@@ -108,10 +108,10 @@
 				33A9E1D82B611D4F005F85CD /* Main */,
 				33A9E1D72B611D45005F85CD /* XcodeView */,
 				33D5E2222B60D8E500B9BD84 /* Headers */,
-				33D5E1EA2B60B96F00B9BD84 /* Assets.xcassets */,
-				33D5E1EF2B60B96F00B9BD84 /* Zcode.entitlements */,
+				33D5E1EF2B60B96F00B9BD84 /* Wcode.entitlements */,
+				A25CAE292CC2F85700EE586F /* Assets.xcassets */,
 			);
-			path = Zcode;
+			path = Wcode;
 			sourceTree = "<group>";
 		};
 		33D5E1F52B60CA8400B9BD84 /* Frameworks */ = {
@@ -148,7 +148,7 @@
 			dependencies = (
 			);
 			name = Wcode;
-			productName = Zcode;
+			productName = Wcode;
 			productReference = 33D5E1E32B60B96E00B9BD84 /* Wcode.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -190,7 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D5E1EB2B60B96F00B9BD84 /* Assets.xcassets in Resources */,
+				A25CAE2A2CC2F85700EE586F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Zcode/Zcode.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Wcode/Wcode.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -348,7 +348,7 @@
 				ENABLE_PREVIEWS = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Zcode/Info.plist;
+				INFOPLIST_FILE = Wcode/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Wcode;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 ssalggnikool (Samara). All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -362,7 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiramisu.wcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Zcode/Headers";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Wcode/Headers";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_DIR)/../SharedFrameworks";
 			};
@@ -373,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Zcode/Zcode.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Wcode/Wcode.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -383,7 +383,7 @@
 				ENABLE_PREVIEWS = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Zcode/Info.plist;
+				INFOPLIST_FILE = Wcode/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Wcode;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 ssalggnikool (Samara). All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -397,7 +397,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiramisu.wcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Zcode/Headers";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Wcode/Headers";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_DIR)/../SharedFrameworks";
 			};

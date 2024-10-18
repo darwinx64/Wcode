@@ -81,6 +81,7 @@ class XcodeView: DVTSourceTextScrollView {
         codeView.allowsUndo = true
         codeView.maxSize = NSMakeSize(CGFloat.greatestFiniteMagnitude, CGFloat.greatestFiniteMagnitude)
         codeView.usesFindBar = true
+        codeView.backgroundColor = NSColor.black
         
         if !WRAP_ON_WORDS {
             codeView.layoutManager?.typesetter = XcodeWrapAnywhereTypesetter()
