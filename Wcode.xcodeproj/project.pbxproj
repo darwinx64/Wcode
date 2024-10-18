@@ -34,7 +34,7 @@
 		33A9E1D02B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeWrapAnywhereTypesetter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		33A9E1D22B611710005F85CD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		33A9E1D52B611B33005F85CD /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		33D5E1E32B60B96E00B9BD84 /* Zcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33D5E1E32B60B96E00B9BD84 /* Wcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D5E1EA2B60B96F00B9BD84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		33D5E1EF2B60B96F00B9BD84 /* Zcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zcode.entitlements; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		33D5E1E42B60B96E00B9BD84 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33D5E1E32B60B96E00B9BD84 /* Zcode.app */,
+				33D5E1E32B60B96E00B9BD84 /* Wcode.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,9 +135,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33D5E1E22B60B96E00B9BD84 /* Zcode */ = {
+		33D5E1E22B60B96E00B9BD84 /* Wcode */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33D5E1F22B60B96F00B9BD84 /* Build configuration list for PBXNativeTarget "Zcode" */;
+			buildConfigurationList = 33D5E1F22B60B96F00B9BD84 /* Build configuration list for PBXNativeTarget "Wcode" */;
 			buildPhases = (
 				33D5E1DF2B60B96E00B9BD84 /* Sources */,
 				33D5E1E02B60B96E00B9BD84 /* Frameworks */,
@@ -147,9 +147,9 @@
 			);
 			dependencies = (
 			);
-			name = Zcode;
+			name = Wcode;
 			productName = Zcode;
-			productReference = 33D5E1E32B60B96E00B9BD84 /* Zcode.app */;
+			productReference = 33D5E1E32B60B96E00B9BD84 /* Wcode.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -180,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33D5E1E22B60B96E00B9BD84 /* Zcode */,
+				33D5E1E22B60B96E00B9BD84 /* Wcode */,
 			);
 		};
 /* End PBXProject section */
@@ -415,7 +415,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33D5E1F22B60B96F00B9BD84 /* Build configuration list for PBXNativeTarget "Zcode" */ = {
+		33D5E1F22B60B96F00B9BD84 /* Build configuration list for PBXNativeTarget "Wcode" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33D5E1F32B60B96F00B9BD84 /* Debug */,
