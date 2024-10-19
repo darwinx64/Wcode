@@ -7,6 +7,61 @@
 
 import Foundation
 import DVTBridge
+import WebKit
+import Cocoa
+
+class WebView: NSView, WKNavigationDelegate {
+    public var webView: WKWebView!
+    private var progressIndicator: NSProgressIndicator!
+
+    override init(frame rect: NSRect) {
+        super.init(frame: rect)
+
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: self.bounds, configuration: webConfiguration)
+        webView.autoresizingMask = [.width, .height]
+        webView.navigationDelegate = self
+
+        webView.loadHTMLString("<p>pretend this is good</p>", baseURL: nil)
+
+        self.addSubview(webView)
+
+        progressIndicator = NSProgressIndicator()
+        progressIndicator.style = .spinning
+        progressIndicator.controlSize = .regular
+        progressIndicator.isIndeterminate = true
+        progressIndicator.isHidden = true
+        progressIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(progressIndicator)
+
+        NSLayoutConstraint.activate([
+            progressIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            progressIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        progressIndicator.isHidden = false
+        progressIndicator.startAnimation(nil)
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        progressIndicator.stopAnimation(nil)
+        progressIndicator.isHidden = true
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        progressIndicator.stopAnimation(nil)
+        progressIndicator.isHidden = true
+        print("Error loading web content: \(error.localizedDescription)")
+    }
+    
+    deinit { print("WebView: deinit") }
+}
 
 class XcodeView: DVTSourceTextScrollView {
     private static var isFrameworkInitialized = false
@@ -59,7 +114,7 @@ class XcodeView: DVTSourceTextScrollView {
             let codeFile = DVTFilePath(forFileURL: codeURL)
             if let codeType = DVTFileDataType(for: codeFile, error: nil) {
                 var language = DVTSourceCodeLanguage(for: codeType)
-                
+
                 if language == nil {
                     if let identifier = LANGUAGE_FALLBACKS()[codeURL.pathExtension] {
                         language = DVTSourceCodeLanguage(identifier: identifier)
@@ -77,19 +132,19 @@ class XcodeView: DVTSourceTextScrollView {
         codeView = DVTSourceTextView()
         codeView.layoutManager?.replaceTextStorage(codeStorage)
         codeView.isHorizontallyResizable = true
+        codeView.isAutomaticTextCompletionEnabled = true
         codeView.wrapsLines = WRAP
         codeView.allowsUndo = true
         codeView.maxSize = NSMakeSize(CGFloat.greatestFiniteMagnitude, CGFloat.greatestFiniteMagnitude)
         codeView.usesFindBar = true
-        codeView.backgroundColor = NSColor.black
-        
+
         if !WRAP_ON_WORDS {
             codeView.layoutManager?.typesetter = XcodeWrapAnywhereTypesetter()
         }
         
         documentView = codeView
         hasVerticalScroller = true
-        hasHorizontalScroller = true
+        hasHorizontalScroller = false
         
         if SHOW_LINE_NUMBERS {
             let sidebarView = DVTTextSidebarView(scrollView: self, orientation: .verticalRuler)
@@ -101,7 +156,7 @@ class XcodeView: DVTSourceTextScrollView {
             
         }
     }
-    
+
     @objc func undo() {
         self.codeView.undoManager?.undo()
     }
@@ -134,58 +189,11 @@ class XcodeView: DVTSourceTextScrollView {
             print("Error saving file: \(error)")
         }
     }
+
     
-    private var widthConstraint: NSLayoutConstraint?
-    
-    override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
-        
-        if let window = self.window {
-            NotificationCenter.default.addObserver(self,
-                                                   selector: #selector(windowDidResize(_:)),
-                                                   name: NSWindow.didResizeNotification,
-                                                   object: window)
-            setupConstraints()
-        }
+    deinit {
+        print("XcodeView: deinnit")
     }
-    
-    private func setupConstraints() {
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
-        updateWidthConstraint()
-
-        if let superview = self.superview {
-            NSLayoutConstraint.activate([
-                self.topAnchor.constraint(equalTo: superview.topAnchor),
-                self.bottomAnchor.constraint(equalTo: superview.bottomAnchor)
-            ])
-        }
-    }
-    
-    @objc private func windowDidResize(_ notification: Notification) {
-        updateWidthConstraint()
-    }
-    
-    private func updateWidthConstraint() {
-        guard let window = self.window else { return }
-
-        if let oldConstraint = widthConstraint {
-            oldConstraint.isActive = false
-            self.removeConstraint(oldConstraint)
-        }
-
-        let newWidth = window.frame.size.width / 2.0
-        widthConstraint = self.widthAnchor.constraint(equalToConstant: newWidth)
-
-        if let widthConstraint = widthConstraint {
-            widthConstraint.isActive = true
-        }
-
-        self.needsLayout = true
-    }
-    
-    
-    deinit { print("XcodeView: deinnit"); NotificationCenter.default.removeObserver(self, name: NSWindow.didResizeNotification, object: nil) }
 }
 
 #warning("Credit where its due: https://gist.github.com/nil-biribiri/67f158c8a93ff0a5d8c99ff41d8fe3bd")

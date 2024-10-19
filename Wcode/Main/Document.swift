@@ -17,12 +17,14 @@ class Document: NSDocument {
         windowController = controller
         
         if let cachedURL = cachedURL {
-            if let xcodeView = windowController?.contentViewController?.view as? XcodeView {
+            if let xcodeView = windowController?.xcodeView as? XcodeView {
                 xcodeView.loadURL(cachedURL)
             }
         }
-        
+        windowController!.window!.setFrameUsingName(windowController!.windowFrameAutosaveName)
         addWindowController(windowController!)
+        windowController!.window!.makeKeyAndOrderFront(nil)
+        windowController!.window!.center()
     }
 
     override func read(from fileURL: URL, ofType typeName: String) throws {

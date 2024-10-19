@@ -1,15 +1,16 @@
 //
-//  SwiftUIView.swift
+//  AboutView.swift
 //  Wcode
 //
 //  Created by samara on 1/25/24.
 //
 
+/// src: https://github.com/CodeEditApp/CodeEdit/blob/main/CodeEdit/Features/About/Views/AboutView.swift
+
 import SwiftUI
 
 enum AboutMode: String, CaseIterable {
     case about
-    case acknowledgements
     case contributors
 }
 
@@ -30,18 +31,14 @@ public struct AboutView: View {
             switch aboutMode {
             case .about:
                 AboutDefaultView(aboutMode: $aboutMode, namespace: animator)
-            case .acknowledgements:
-                AcknowledgementsView(aboutMode: $aboutMode, namespace: animator)
             case .contributors:
                 ContributorsView(aboutMode: $aboutMode, namespace: animator)
             }
         }
         .animation(.spring(), value: aboutMode)
         .ignoresSafeArea()
-        .frame(width: 280, height: 400 - 28)
+        .frame(width: 280, height: 300)
         .fixedSize()
-        // hack required to get buttons appearing correctly in light appearance
-        // if anyone knows of a better way to do this feel free to refactor
         .background(.regularMaterial.opacity(0))
         .background(EffectView(.popover, blendingMode: .behindWindow).ignoresSafeArea())
         .background {
@@ -50,15 +47,6 @@ public struct AboutView: View {
             }
             .keyboardShortcut(.escape, modifiers: [])
             .hidden()
-        }
-        .task {
-            if let window = NSApp.findWindow(.about) {
-                window.styleMask = [.closable, .fullSizeContentView, .titled, .nonactivatingPanel]
-                window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-                window.standardWindowButton(.zoomButton)?.isHidden = true
-                window.backgroundColor = .gray.withAlphaComponent(0.15)
-                window.isMovableByWindowBackground = true
-            }
         }
     }
 }

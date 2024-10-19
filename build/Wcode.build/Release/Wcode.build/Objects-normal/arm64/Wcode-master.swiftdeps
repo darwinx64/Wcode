@@ -1,0 +1,20 @@
+version: "Apple Swift version 6.0 (swiftlang-6.0.0.7.6 clang-1600.0.24.1)"
+options: "588f6e29edf5710fa111f06c8c5cdc7285c1ce4d02e920953742a7a068bb5cb2"
+build_start_time: [1729326875, 950174000]
+build_end_time: [1729326888, 804226000]
+inputs:
+  "/Users/tiramisu/Projects/Wcode/Wcode/AppDelegate.swift": !dirty [1729326384, 198392007]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutDefaultView.swift": !dirty [1729326155, 232533261]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutDetailView.swift": !dirty [1729325983, 442156481]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutView.swift": !dirty [1729326755, 954505189]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/BlurButtonStyle.swift": !dirty [1729325983, 512177727]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/EffectView.swift": !dirty [1729325983, 499184158]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/TrackableScrollView.swift": !dirty [1729325163, 121881839]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Main/Document.swift": !dirty [1729324183, 583304821]
+  "/Users/tiramisu/Projects/Wcode/Wcode/Main/WindowController.swift": !dirty [1729324402, 696478892]
+  "/Users/tiramisu/Projects/Wcode/Wcode/SettingsView.swift": !dirty [1729300147, 805151670]
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeView.swift": !dirty [1729317621, 717742357]
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeViewSettings.swift": !dirty [1729317279, 505204715]
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeWrapAnywhereTypesetter.swift": !dirty [1729279503, 740690645]
+  "/Users/tiramisu/Projects/Wcode/Wcode/main.swift": !dirty [1729289707, 759262604]
+  "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/DerivedSources/GeneratedAssetSymbols.swift": !dirty [1729326874, 691737724]

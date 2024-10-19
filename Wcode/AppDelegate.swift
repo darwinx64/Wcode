@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var info = Bundle.main.infoDictionary!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
         setupMenuBar()
 
         NSApp.activate(ignoringOtherApps: true)
@@ -55,10 +54,14 @@ extension AppDelegate {
 
         let window = NSWindow(contentViewController: hostingController)
         window.title = ""
-        
+
+        window.styleMask = [.closable, .fullSizeContentView, .titled, .nonactivatingPanel]
+        window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        window.standardWindowButton(.zoomButton)?.isHidden = true
+        window.backgroundColor = .gray.withAlphaComponent(0.15)
+        window.isMovableByWindowBackground = true
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
-        window.styleMask = [.closable, .titled]
 
         window.center()
 
@@ -66,12 +69,12 @@ extension AppDelegate {
     }
     
     @objc func settingsPanel(_ sender: Any?) {
-        let swiftUIView = AboutView()
+        let swiftUIView = SettingsView()
 
         let hostingController = NSHostingController(rootView: swiftUIView)
 
         let window = NSWindow(contentViewController: hostingController)
-        window.title = ""
+        window.title = "Wcode Settings"
         
         window.titlebarAppearsTransparent = true
         window.titleVisibility = .hidden
@@ -82,12 +85,10 @@ extension AppDelegate {
         window.makeKeyAndOrderFront(nil)
     }
 
-
-
     @objc func undo() { contentView.xcodeView.undo() }
     @objc func redo() { contentView.xcodeView.redo() }
     @objc func save() { NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: nil) }
-    
+
 }
 
 extension AppDelegate {
@@ -173,4 +174,3 @@ extension AppDelegate {
         NSApplication.shared.mainMenu = menu
     }
 }
-

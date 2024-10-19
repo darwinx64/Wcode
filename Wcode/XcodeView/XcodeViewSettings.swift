@@ -18,11 +18,11 @@ let WRAP_ON_WORDS = false
 let SHOW_LINE_NUMBERS = true
 
 func LANGUAGE_FALLBACKS() -> [String: String] {
-    var result = [String: String]()
+    var result = [String: String]() 
 
     // ActionScript
     result["as"] = "Xcode.SourceCodeLanguage.JavaScript"
-
+    result["Swift"] = "Xcode.SourceCodeLanguage.Java"
 
     return result
 }

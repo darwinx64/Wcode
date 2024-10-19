@@ -1,0 +1,26 @@
+{
+    "contributors": [
+        {
+            "login": "darwinx64",
+            "name": "Tiramisu",
+            "avatar_url": "https://github.com/darwinx64.png",
+            "profile": "https://tiramisu.gay/",
+            "description": "Wcode"
+        },
+        {
+            "login": "khcrysalis",
+            "name": "Samara",
+            "avatar_url": "https://github.com/khcrysalis.png",
+            "profile": "https://khcrysalis.dev/",
+            "description": "Zcode"
+        },
+        {
+            "login": "ASentientBot",
+            "name": "Amy",
+            "avatar_url": "https://github.com/ASentientBot.png",
+            "profile": "https://asentientbot.github.io/",
+            "description": "Ycode"
+        },
+    ]
+}
+

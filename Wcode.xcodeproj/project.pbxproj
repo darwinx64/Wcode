@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,10 @@
 		33A9E1D62B611B33005F85CD /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1D52B611B33005F85CD /* WindowController.swift */; };
 		33D5E1E72B60B96E00B9BD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */; };
 		33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */; };
-		33D5E21C2B60D68B00B9BD84 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D5E21B2B60D68A00B9BD84 /* DVTKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		33DBAF1D2B6390CE00A4ADCE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DBAF1C2B6390CE00A4ADCE /* AboutView.swift */; };
+		A2379AD82CC31AC40062A917 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2379AD72CC31ABB0062A917 /* SettingsView.swift */; };
 		A25CAE2A2CC2F85700EE586F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25CAE292CC2F85700EE586F /* Assets.xcassets */; };
+		A2A019072CC37D1D00AF7C30 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A019062CC37D1D00AF7C30 /* DVTKit.framework */; };
+		A2E06F882CC3AEAC007A6367 /* .all-contributorsrc in Resources */ = {isa = PBXBuildFile; fileRef = A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,19 +38,43 @@
 		33D5E1E32B60B96E00B9BD84 /* Wcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33D5E1EF2B60B96F00B9BD84 /* Wcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wcode.entitlements; sourceTree = "<group>"; };
-		33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/xcode/Xcode-14.3.1.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
-		33D5E21B2B60D68A00B9BD84 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = "../../../../Applications/xcode/Xcode-14.3.1.app/Contents/SharedFrameworks/DVTKit.framework"; sourceTree = "<group>"; };
+		33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/Xcode-16.1.0-Beta.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
 		33D5E2242B60D93200B9BD84 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		33DBAF1C2B6390CE00A4ADCE /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		A2379AD72CC31ABB0062A917 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A25CAE292CC2F85700EE586F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".all-contributorsrc"; sourceTree = "<group>"; };
+		A2A019062CC37D1D00AF7C30 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = "../../../../Applications/Xcode-16.1.0-Beta.app/Contents/SharedFrameworks/DVTKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A25D34AC2CC39FD600D3E99F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				About/Contributors/ContributorRowView.swift,
+				About/Contributors/ContributorsView.swift,
+				About/Contributors/Model/Contributor.swift,
+				About/README.md,
+				About/Views/AboutDefaultView.swift,
+				About/Views/AboutDetailView.swift,
+				About/Views/AboutView.swift,
+				About/Views/BlurButtonStyle.swift,
+				About/Views/EffectView.swift,
+				About/Views/TrackableScrollView.swift,
+			);
+			target = 33D5E1E22B60B96E00B9BD84 /* Wcode */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A25D34A22CC39FCB00D3E99F /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A25D34AC2CC39FD600D3E99F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		33D5E1E02B60B96E00B9BD84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33D5E21C2B60D68B00B9BD84 /* DVTKit.framework in Frameworks */,
+				A2A019072CC37D1D00AF7C30 /* DVTKit.framework in Frameworks */,
 				33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,6 +104,7 @@
 		33D5E1DA2B60B96E00B9BD84 = {
 			isa = PBXGroup;
 			children = (
+				A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */,
 				33A9E1C82B60E0C9005F85CD /* .gitignore */,
 				33A9E1C92B60E0DF005F85CD /* README.md */,
 				33A9E1CA2B60E0E5005F85CD /* LICENSE */,
@@ -101,9 +127,10 @@
 		33D5E1E52B60B96E00B9BD84 /* Wcode */ = {
 			isa = PBXGroup;
 			children = (
+				A25D34A22CC39FCB00D3E99F /* Features */,
 				3348C0ED2B614FE300764DD9 /* Info.plist */,
 				33A9E1C62B60DEB3005F85CD /* main.swift */,
-				33DBAF1C2B6390CE00A4ADCE /* AboutView.swift */,
+				A2379AD72CC31ABB0062A917 /* SettingsView.swift */,
 				33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */,
 				33A9E1D82B611D4F005F85CD /* Main */,
 				33A9E1D72B611D45005F85CD /* XcodeView */,
@@ -117,7 +144,7 @@
 		33D5E1F52B60CA8400B9BD84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				33D5E21B2B60D68A00B9BD84 /* DVTKit.framework */,
+				A2A019062CC37D1D00AF7C30 /* DVTKit.framework */,
 				33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */,
 			);
 			name = Frameworks;
@@ -191,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25CAE2A2CC2F85700EE586F /* Assets.xcassets in Resources */,
+				A2E06F882CC3AEAC007A6367 /* .all-contributorsrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +231,7 @@
 			files = (
 				33A9E1CF2B60E520005F85CD /* XcodeViewSettings.swift in Sources */,
 				33A9E1C72B60DEB3005F85CD /* main.swift in Sources */,
-				33DBAF1D2B6390CE00A4ADCE /* AboutView.swift in Sources */,
+				A2379AD82CC31AC40062A917 /* SettingsView.swift in Sources */,
 				33A9E1D12B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift in Sources */,
 				33D5E1E72B60B96E00B9BD84 /* AppDelegate.swift in Sources */,
 				33A9E1D62B611B33005F85CD /* WindowController.swift in Sources */,

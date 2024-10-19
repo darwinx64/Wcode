@@ -1,0 +1,85 @@
+{
+  "" : {
+    "const-values" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master.swiftconstvalues",
+    "dependencies" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master.d",
+    "diagnostics" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master.dia",
+    "emit-module-dependencies" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master-emit-module.dia",
+    "swift-dependencies" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Wcode-master.swiftdeps"
+  },
+  "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/GeneratedAssetSymbols.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/AppDelegate.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AppDelegate.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AppDelegate.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AppDelegate.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutDefaultView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDefaultView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDefaultView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDefaultView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutDetailView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDetailView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDetailView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutDetailView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/AboutView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/AboutView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/BlurButtonStyle.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/BlurButtonStyle.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/BlurButtonStyle.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/BlurButtonStyle.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/EffectView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/EffectView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/EffectView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/EffectView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Features/About/Views/TrackableScrollView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/TrackableScrollView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/TrackableScrollView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/TrackableScrollView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/main.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/main.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/main.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/main.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Main/Document.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Document.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Document.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/Document.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/Main/WindowController.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/WindowController.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/WindowController.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/WindowController.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/SettingsView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/SettingsView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/SettingsView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/SettingsView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeView.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeView.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeView.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeView.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeViewSettings.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeViewSettings.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeViewSettings.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeViewSettings.o"
+  },
+  "/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeWrapAnywhereTypesetter.swift" : {
+    "index-unit-output-path" : "/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeWrapAnywhereTypesetter.o",
+    "llvm-bc" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeWrapAnywhereTypesetter.bc",
+    "object" : "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/x86_64/XcodeWrapAnywhereTypesetter.o"
+  }
+}
