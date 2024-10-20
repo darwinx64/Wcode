@@ -1,9 +1,0 @@
-"/Users/tiramisu/Projects/Wcode/Wcode/XcodeView/XcodeViewSettings.swift":
-  dependencies: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode-master.d"
-  swiftmodule: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode.swiftmodule"
-  abi-baseline-json: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode.abi.json"
-  swiftsourceinfo: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode.swiftsourceinfo"
-  diagnostics: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode-master.dia"
-  swiftdoc: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode.swiftdoc"
-  objc-header: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode-Swift.h"
-  const-values: "/Users/tiramisu/Projects/Wcode/build/Wcode.build/Release/Wcode.build/Objects-normal/arm64/Wcode-master.swiftconstvalues"
