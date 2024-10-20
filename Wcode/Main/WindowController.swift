@@ -7,26 +7,91 @@
 
 import Foundation
 import Cocoa
+import SwiftUI
 
-class SidebarView: NSView {
-    override init(frame frameRect: NSRect) {
-        super.init(frame: frameRect)
-        self.wantsLayer = true
+struct CodeEditorViewWrapper: NSViewRepresentable {
+    func makeNSView(context: Context) -> CodeEditorView {
+        let codeEditorView = CodeEditorView()
+        return codeEditorView
     }
+    func updateNSView(_ nsView: CodeEditorView, context: Context) {}
+}
 
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+struct ContentView: View {
+    @State private var showingInspector: Bool? = false
+    var body: some View {
+        NavigationSplitView {
+            List {
+                VStack {
+                    Color(NSColor.secondarySystemFill)
+                        .frame(height: 1)
+                        .padding(.horizontal, -200)
+                        .padding(.top, -3.501)
+                    
+                    let icons = ["folder.fill", "bookmark", "magnifyingglass", "exclamationmark.triangle", "checkmark.diamond", "ladybug", "tag"]
+                    let accentIconIndex = 0
+
+                    HStack {
+                        ForEach(icons.indices, id: \.self) { index in
+                            Image(systemName: icons[index])
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .foregroundStyle(index == accentIconIndex ? Color.accentColor : Color.secondary)
+                                .frame(height: 13)
+                                .frame(maxWidth: .infinity)
+                        }
+                    }
+                    .padding(.top, -3.501)
+                    
+                    Color(NSColor.secondarySystemFill)
+                        .frame(height: 1)
+                        .padding(.horizontal, -200)
+                }
+                Section("Meow") {}
+            }
+            .frame(minWidth: 250)
+            .toolbar { Button(action: toggleSidebar, label: { Image(systemName: "sidebar.left") }) }
+            .listStyle(SidebarListStyle())
+        } detail: {
+            CodeEditorViewWrapper()
+        }
+        .presentedWindowToolbarStyle(.unifiedCompact)
+        .inspector(isPresented: Binding(
+            get: { showingInspector ?? false },
+            set: { newValue in showingInspector = newValue ? true : nil }
+        ), content: {
+            BrowserView(showingInspector: $showingInspector)
+                .inspectorColumnWidth(min: 150, ideal: 350, max: 1000)
+                .toolbar() {
+                    Button(action: toggleInspector) {
+                        Image(systemName: "sidebar.right")
+                            .help("Toggle Browser")
+                    }
+                }
+        })
+        
+    }
+    private func toggleSidebar() {
+        NSApp.keyWindow?.firstResponder?
+            .tryToPerform(#selector(NSSplitViewController.toggleSidebar(_:)), with: nil)
+    }
+    private func toggleInspector() {
+        if (showingInspector ?? false) {
+            showingInspector = false
+        } else {
+            showingInspector = true
+        }
     }
 }
 
-/// our main `WindowController`; contains xcodeview to the left, webview right
-class WindowController: NSWindowController, NSToolbarDelegate, NSToolbarItemValidation {
-    public var xcodeView: XcodeView!
-    var websiteView: WebView!
+#Preview {
+    ContentView()
+}
 
-    private var webviewVisible: Bool = true
-
-    private var websiteViewWidthConstraint: NSLayoutConstraint?
+class WindowController: NSWindowController {
+    public var contentView: ContentView!
+    public var hostingView: NSHostingView<ContentView>!
+    public var codeEditorView: CodeEditorView!
 
     override init(window: NSWindow?) {
         super.init(window: nil)
@@ -35,25 +100,25 @@ class WindowController: NSWindowController, NSToolbarDelegate, NSToolbarItemVali
         shouldCascadeWindows = false
 
         self.window = createWindow()
-        configureToolbar()
-
-        xcodeView = XcodeView(frame: .zero)
-        websiteView = WebView(frame: .zero)
-
-        setupSplitViewController()
 
         self.window!.center()
+        
+        self.contentView = ContentView()
+        self.hostingView = NSHostingView(rootView: contentView)
+        self.hostingView.sceneBridgingOptions = [.toolbars]
+
+        self.hostingView.frame = self.window!.contentView!.bounds
+        self.hostingView.autoresizingMask = [.width, .height]
+        
+        self.window!.contentView?.addSubview(self.hostingView)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    deinit {
-        self.contentViewController = nil
-    }
+    deinit { self.contentViewController = nil }
 
-    /// create and configure the main window
     private func createWindow() -> NSWindow {
         let window = NSWindow(
             contentRect: NSRect(x: 0, y: 0, width: 1100, height: 900),
@@ -66,120 +131,7 @@ class WindowController: NSWindowController, NSToolbarDelegate, NSToolbarItemVali
         window.becomeFirstResponder()
         window.animationBehavior = .documentWindow
         window.titlebarSeparatorStyle = .automatic
-        window.toolbarStyle = .unifiedCompact
         window.titleVisibility = .hidden
-
         return window
     }
-
-    func validateToolbarItem(_ item: NSToolbarItem) -> Bool {
-        return true
-    }
-
-    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.toggleSidebar, .toggleWebview, .sidebarTrackingSeparator]
-    }
-    
-    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
-        return [.toggleSidebar, .toggleWebview, .sidebarTrackingSeparator]
-    }
-    
-    @objc func toggleWebviewAction(_ sender: Any?) {
-        webviewVisible.toggle()
-        DispatchQueue.main.async {
-            NSAnimationContext.runAnimationGroup({ context in
-                context.duration = 0.3
-                context.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-                self.websiteViewWidthConstraint?.animator().constant = self.webviewVisible ? 0 : 300
-            })
-        }
-    }
-    
-    func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar isInsertedIntoToolbar: Bool) -> NSToolbarItem? {
-        var toolbarItem: NSToolbarItem?
-        switch itemIdentifier {
-        case .toggleSidebar:
-            let toolbarItem = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier.toggleSidebar)
-            toolbarItem.label = "Navigator Sidebar"
-            toolbarItem.paletteLabel = " Navigator Sidebar"
-            toolbarItem.toolTip = "Hide or show the Navigator"
-            toolbarItem.isBordered = true
-            toolbarItem.image = NSImage(
-                systemSymbolName: "sidebar.leading",
-                accessibilityDescription: nil
-            )?.withSymbolConfiguration(.init(scale: .large))
-            return toolbarItem
-        case .sidebarTrackingSeparator:
-            let item = NSToolbarItem(itemIdentifier: .sidebarTrackingSeparator)
-            toolbarItem = item
-        case .toggleWebview:
-            let toolbarItem = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier.toggleWebview)
-            toolbarItem.label = "Webview"
-            toolbarItem.paletteLabel = "Webview"
-            toolbarItem.toolTip = "Hide or show the Webview"
-            toolbarItem.isBordered = true
-            toolbarItem.action = #selector(toggleWebviewAction)
-            toolbarItem.image = NSImage(
-                systemSymbolName: "globe",
-                accessibilityDescription: nil
-            )?.withSymbolConfiguration(.init(scale: .large))
-            return toolbarItem
-        default:
-            toolbarItem = nil
-        }
-        toolbarItem?.isBordered = true
-        
-        return toolbarItem
-    }
-
-    /// configures the window's toolbar
-    internal func configureToolbar() {
-        let toolbar = NSToolbar(identifier: UUID().uuidString)
-        toolbar.delegate = self
-        toolbar.displayMode = .labelOnly
-        toolbar.showsBaselineSeparator = false
-        self.window?.toolbar = toolbar
-    }
-
-    /// sets up the layout of views within a stack view
-    private func setupSplitViewController() {
-        let splitViewController = NSSplitViewController()
-
-        let sidebarViewController = NSViewController()
-        sidebarViewController.view = SidebarView()
-
-        let mainContentViewController = NSViewController()
-        let stackView = NSStackView(views: [xcodeView, websiteView])
-        stackView.distribution = .fillEqually
-        mainContentViewController.view = stackView
-        
-        websiteViewWidthConstraint = websiteView.widthAnchor.constraint(equalToConstant: 300)
-        websiteViewWidthConstraint?.isActive = true
-
-        let sidebarItem = NSSplitViewItem(sidebarWithViewController: sidebarViewController)
-        sidebarItem.allowsFullHeightLayout = true
-        sidebarItem.minimumThickness = 200
-        sidebarItem.maximumThickness = 300
-        sidebarItem.canCollapse = true
-        sidebarItem.isCollapsed = false
-
-        let mainContentItem = NSSplitViewItem(viewController: mainContentViewController)
-        mainContentItem.allowsFullHeightLayout = false
-
-        splitViewController.addSplitViewItem(sidebarItem)
-        splitViewController.addSplitViewItem(mainContentItem)
-
-        self.contentViewController = splitViewController
-
-        NSLayoutConstraint.activate([
-            splitViewController.view.leadingAnchor.constraint(equalTo: window!.contentView!.leadingAnchor),
-            splitViewController.view.trailingAnchor.constraint(equalTo: window!.contentView!.trailingAnchor),
-            splitViewController.view.topAnchor.constraint(equalTo: window!.contentView!.topAnchor),
-            splitViewController.view.bottomAnchor.constraint(equalTo: window!.contentView!.bottomAnchor)
-        ])
-    }
-}
-
-private extension NSToolbarItem.Identifier {
-    static let toggleWebview: NSToolbarItem.Identifier = NSToolbarItem.Identifier(rawValue: "ToggleWebview")
 }

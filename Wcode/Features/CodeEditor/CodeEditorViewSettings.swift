@@ -1,5 +1,5 @@
 //
-//  XcodeViewSettings.swift
+//  CodeEditorViewSettings.swift
 //  Wcode
 //
 //  Created by samara on 1/23/24.

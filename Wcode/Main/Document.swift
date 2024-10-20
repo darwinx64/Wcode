@@ -17,8 +17,8 @@ class Document: NSDocument {
         windowController = controller
         
         if let cachedURL = cachedURL {
-            if let xcodeView = windowController?.xcodeView as? XcodeView {
-                xcodeView.loadURL(cachedURL)
+            if let codeEditorView = windowController?.codeEditorView as? CodeEditorView {
+                codeEditorView.loadURL(cachedURL)
             }
         }
         windowController!.window!.setFrameUsingName(windowController!.windowFrameAutosaveName)
@@ -32,8 +32,8 @@ class Document: NSDocument {
     }
 
     override func write(to fileURL: URL, ofType typeName: String) throws {
-        if let xcodeView = windowController?.contentViewController?.view as? XcodeView {
-            xcodeView.saveURL(fileURL)
+        if let codeEditorView = windowController?.codeEditorView as? CodeEditorView {
+            codeEditorView.saveURL(fileURL)
         }
     }
 

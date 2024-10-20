@@ -54,6 +54,7 @@
 @property (assign) BOOL useSyntaxAwareIndenting;
 @property (assign) BOOL autoInsertClosingBrace;
 @property (assign) BOOL autoInsertOpenBracket;
+@property (assign) BOOL trimTrailingWhitespace;
 @end
 
 @interface DVTSourceTextScrollView : NSScrollView

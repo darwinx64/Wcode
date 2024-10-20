@@ -17,17 +17,6 @@ welcome to the 4th dimension of programming
 ```sh
 git clone https://github.com/darwinx64/Wcode.git
 cd Wcode-main
-xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+make package CODE_SIGN=NO
 open ./packages
-```
-
-1. Clone
-2. CD
-3. Build without signing (or do)
-4. Open the build dir in finder
-
-Alternatively, a one-liner
-
-```sh
-git clone https://github.com/darwinx64/Wcode.git; cd Wcode-main; xcodebuild CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO; open ./packages
 ```

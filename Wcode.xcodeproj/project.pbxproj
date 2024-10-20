@@ -8,31 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		3348C0EC2B614CC700764DD9 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3348C0EB2B614CC700764DD9 /* Document.swift */; };
-		33A9E1C72B60DEB3005F85CD /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1C62B60DEB3005F85CD /* main.swift */; };
-		33A9E1CD2B60E4CA005F85CD /* XcodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1CC2B60E4CA005F85CD /* XcodeView.swift */; };
-		33A9E1CF2B60E520005F85CD /* XcodeViewSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1CE2B60E520005F85CD /* XcodeViewSettings.swift */; };
-		33A9E1D12B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1D02B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift */; };
 		33A9E1D62B611B33005F85CD /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A9E1D52B611B33005F85CD /* WindowController.swift */; };
 		33D5E1E72B60B96E00B9BD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */; };
 		33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */; };
-		A2379AD82CC31AC40062A917 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2379AD72CC31ABB0062A917 /* SettingsView.swift */; };
 		A25CAE2A2CC2F85700EE586F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25CAE292CC2F85700EE586F /* Assets.xcassets */; };
 		A2A019072CC37D1D00AF7C30 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A019062CC37D1D00AF7C30 /* DVTKit.framework */; };
 		A2E06F882CC3AEAC007A6367 /* .all-contributorsrc in Resources */ = {isa = PBXBuildFile; fileRef = A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */; };
+		A2ED9F412CC46E5900DDEAD5 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9F402CC46E5900DDEAD5 /* Settings */; };
+		A2ED9F4D2CC475F700DDEAD5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED9F4C2CC475F700DDEAD5 /* main.swift */; };
+		A2ED9F582CC4BD0B00DDEAD5 /* SwiftUIWebView in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9F572CC4BD0B00DDEAD5 /* SwiftUIWebView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3348C0EB2B614CC700764DD9 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3348C0ED2B614FE300764DD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		33A9E1C52B60DBA7005F85CD /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
-		33A9E1C62B60DEB3005F85CD /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		33A9E1C82B60E0C9005F85CD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		33A9E1C92B60E0DF005F85CD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		33A9E1CA2B60E0E5005F85CD /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		33A9E1CB2B60E101005F85CD /* packages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = packages; sourceTree = "<group>"; };
-		33A9E1CC2B60E4CA005F85CD /* XcodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeView.swift; sourceTree = "<group>"; };
-		33A9E1CE2B60E520005F85CD /* XcodeViewSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeViewSettings.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.java; };
-		33A9E1D02B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeWrapAnywhereTypesetter.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		33A9E1D22B611710005F85CD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		33A9E1D52B611B33005F85CD /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		33D5E1E32B60B96E00B9BD84 /* Wcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,10 +34,10 @@
 		33D5E1EF2B60B96F00B9BD84 /* Wcode.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wcode.entitlements; sourceTree = "<group>"; };
 		33D5E2172B60D68000B9BD84 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = "../../../../Applications/Xcode-16.1.0-Beta.app/Contents/SharedFrameworks/DVTFoundation.framework"; sourceTree = "<group>"; };
 		33D5E2242B60D93200B9BD84 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
-		A2379AD72CC31ABB0062A917 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A25CAE292CC2F85700EE586F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".all-contributorsrc"; sourceTree = "<group>"; };
 		A2A019062CC37D1D00AF7C30 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = "../../../../Applications/Xcode-16.1.0-Beta.app/Contents/SharedFrameworks/DVTKit.framework"; sourceTree = "<group>"; };
+		A2ED9F4C2CC475F700DDEAD5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -60,6 +54,14 @@
 				About/Views/BlurButtonStyle.swift,
 				About/Views/EffectView.swift,
 				About/Views/TrackableScrollView.swift,
+				Browser/BrowserView.swift,
+				Browser/NavigationButton.swift,
+				Browser/URLTextField.swift,
+				CodeEditor/CodeEditorView.swift,
+				CodeEditor/CodeEditorViewSettings.swift,
+				CodeEditor/CodeEditorWrapAnywhereTypesetter.swift,
+				Settings/PaneIdentifiers.swift,
+				Settings/Views/GeneralSettingsViewController.swift,
 			);
 			target = 33D5E1E22B60B96E00B9BD84 /* Wcode */;
 		};
@@ -74,7 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2ED9F412CC46E5900DDEAD5 /* Settings in Frameworks */,
 				A2A019072CC37D1D00AF7C30 /* DVTKit.framework in Frameworks */,
+				A2ED9F582CC4BD0B00DDEAD5 /* SwiftUIWebView in Frameworks */,
 				33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,16 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33A9E1D72B611D45005F85CD /* XcodeView */ = {
-			isa = PBXGroup;
-			children = (
-				33A9E1CE2B60E520005F85CD /* XcodeViewSettings.swift */,
-				33A9E1CC2B60E4CA005F85CD /* XcodeView.swift */,
-				33A9E1D02B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift */,
-			);
-			path = XcodeView;
-			sourceTree = "<group>";
-		};
 		33A9E1D82B611D4F005F85CD /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,11 +123,9 @@
 			children = (
 				A25D34A22CC39FCB00D3E99F /* Features */,
 				3348C0ED2B614FE300764DD9 /* Info.plist */,
-				33A9E1C62B60DEB3005F85CD /* main.swift */,
-				A2379AD72CC31ABB0062A917 /* SettingsView.swift */,
+				A2ED9F4C2CC475F700DDEAD5 /* main.swift */,
 				33D5E1E62B60B96E00B9BD84 /* AppDelegate.swift */,
 				33A9E1D82B611D4F005F85CD /* Main */,
-				33A9E1D72B611D45005F85CD /* XcodeView */,
 				33D5E2222B60D8E500B9BD84 /* Headers */,
 				33D5E1EF2B60B96F00B9BD84 /* Wcode.entitlements */,
 				A25CAE292CC2F85700EE586F /* Assets.xcassets */,
@@ -203,6 +195,10 @@
 				Base,
 			);
 			mainGroup = 33D5E1DA2B60B96E00B9BD84;
+			packageReferences = (
+				A2ED9F3F2CC46E5900DDEAD5 /* XCRemoteSwiftPackageReference "Settings" */,
+				A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */,
+			);
 			productRefGroup = 33D5E1E42B60B96E00B9BD84 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -229,14 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33A9E1CF2B60E520005F85CD /* XcodeViewSettings.swift in Sources */,
-				33A9E1C72B60DEB3005F85CD /* main.swift in Sources */,
-				A2379AD82CC31AC40062A917 /* SettingsView.swift in Sources */,
-				33A9E1D12B60E69B005F85CD /* XcodeWrapAnywhereTypesetter.swift in Sources */,
 				33D5E1E72B60B96E00B9BD84 /* AppDelegate.swift in Sources */,
+				A2ED9F4D2CC475F700DDEAD5 /* main.swift in Sources */,
 				33A9E1D62B611B33005F85CD /* WindowController.swift in Sources */,
 				3348C0EC2B614CC700764DD9 /* Document.swift in Sources */,
-				33A9E1CD2B60E4CA005F85CD /* XcodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +376,7 @@
 					"@executable_path/../Frameworks",
 					"$(DEVELOPER_DIR)/../SharedFrameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiramisu.wcode;
@@ -419,7 +411,7 @@
 					"@executable_path/../Frameworks",
 					"$(DEVELOPER_DIR)/../SharedFrameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tiramisu.wcode;
@@ -453,6 +445,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2ED9F3F2CC46E5900DDEAD5 /* XCRemoteSwiftPackageReference "Settings" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Settings";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.1;
+			};
+		};
+		A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-webview";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2ED9F402CC46E5900DDEAD5 /* Settings */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2ED9F3F2CC46E5900DDEAD5 /* XCRemoteSwiftPackageReference "Settings" */;
+			productName = Settings;
+		};
+		A2ED9F572CC4BD0B00DDEAD5 /* SwiftUIWebView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */;
+			productName = SwiftUIWebView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 33D5E1DB2B60B96E00B9BD84 /* Project object */;
 }

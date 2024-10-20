@@ -21,6 +21,20 @@
             "profile": "https://asentientbot.github.io/",
             "description": "Ycode"
         },
+        {
+            "login": "llsc12",
+            "name": "llsc12",
+            "avatar_url": "https://github.com/llsc12.png",
+            "profile": "https://llsc12.me",
+            "description": "Some feedback"
+        },
+        {
+            "login": "trixie909",
+            "name": "Trixie",
+            "avatar_url": "https://github.com/trixie909.png",
+            "profile": "https://probing.fyi/",
+            "description": "Some feedback"
+        },
     ]
 }
 

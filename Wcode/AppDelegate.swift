@@ -7,17 +7,29 @@
 
 import DVTBridge
 import SwiftUI
-
+import Settings
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var contentView: WindowController!
     var document: Document!
     var info = Bundle.main.infoDictionary!
+    
+    private lazy var panes: [SettingsPane] = [
+        GeneralSettingsViewController(),
+        AppearanceSettingsViewController(),
+    ]
+    
+    private lazy var settingsWindowController = SettingsWindowController(
+            panes: panes,
+            style: .toolbarItems,
+            animated: true,
+            hidesToolbarForSingleItem: true
+        )
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         setupMenuBar()
 
-        NSApp.activate(ignoringOtherApps: true)
+        //NSApp.activate(ignoringOtherApps: true)
 
         NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
             if event.modifierFlags.contains(.command) {
@@ -43,8 +55,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-
-
 extension AppDelegate {
     @objc func quit() { NSApplication.shared.terminate(self)}
     @objc func aboutPanel(_ sender: Any?) {
@@ -69,24 +79,11 @@ extension AppDelegate {
     }
     
     @objc func settingsPanel(_ sender: Any?) {
-        let swiftUIView = SettingsView()
-
-        let hostingController = NSHostingController(rootView: swiftUIView)
-
-        let window = NSWindow(contentViewController: hostingController)
-        window.title = "Wcode Settings"
-        
-        window.titlebarAppearsTransparent = true
-        window.titleVisibility = .hidden
-        window.styleMask = [.closable, .titled]
-
-        window.center()
-
-        window.makeKeyAndOrderFront(nil)
+        self.settingsWindowController.show()
     }
 
-    @objc func undo() { contentView.xcodeView.undo() }
-    @objc func redo() { contentView.xcodeView.redo() }
+    @objc func undo() { contentView.codeEditorView.undo() }
+    @objc func redo() { contentView.codeEditorView.redo() }
     @objc func save() { NSApp.sendAction(#selector(NSDocument.save(_:)), to: nil, from: nil) }
 
 }

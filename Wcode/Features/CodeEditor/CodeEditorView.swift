@@ -1,5 +1,5 @@
 //
-//  XcodeView.swift
+//  CodeEditorView.swift
 //  Wcode
 //
 //  Created by samara on 1/23/24.
@@ -9,61 +9,14 @@ import Foundation
 import DVTBridge
 import WebKit
 import Cocoa
+import SwiftUI
 
-class WebView: NSView, WKNavigationDelegate {
-    public var webView: WKWebView!
-    private var progressIndicator: NSProgressIndicator!
-
-    override init(frame rect: NSRect) {
-        super.init(frame: rect)
-
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: self.bounds, configuration: webConfiguration)
-        webView.autoresizingMask = [.width, .height]
-        webView.navigationDelegate = self
-
-        webView.loadHTMLString("<p>pretend this is good</p>", baseURL: nil)
-
-        self.addSubview(webView)
-
-        progressIndicator = NSProgressIndicator()
-        progressIndicator.style = .spinning
-        progressIndicator.controlSize = .regular
-        progressIndicator.isIndeterminate = true
-        progressIndicator.isHidden = true
-        progressIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(progressIndicator)
-
-        NSLayoutConstraint.activate([
-            progressIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            progressIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-        ])
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        progressIndicator.isHidden = false
-        progressIndicator.startAnimation(nil)
-    }
-
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        progressIndicator.stopAnimation(nil)
-        progressIndicator.isHidden = true
-    }
-
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        progressIndicator.stopAnimation(nil)
-        progressIndicator.isHidden = true
-        print("Error loading web content: \(error.localizedDescription)")
-    }
-    
-    deinit { print("WebView: deinit") }
-}
-
-class XcodeView: DVTSourceTextScrollView {
+/// This is a view that uses private DVT frameworks to mimic the one found in Xcode
+///
+/// The whole point of Zcode/Ycode originally was to use these DVT frameworks but
+/// I've been considering potentially making my own later because this project has
+/// been becoming a bit more serious than I originally anticipated
+class CodeEditorView: DVTSourceTextScrollView, NSTextViewDelegate {
     private static var isFrameworkInitialized = false
     private var frameworkInitPredicate: Int = 0
     
@@ -83,13 +36,14 @@ class XcodeView: DVTSourceTextScrollView {
             shared?.useSyntaxAwareIndenting = AUTO_INDENT
             shared?.autoInsertClosingBrace = AUTO_CLOSE_BRACE
             shared?.autoInsertOpenBracket = AUTO_OPEN_BRACKET
+            shared?.trimTrailingWhitespace = true
             
-            XcodeView.isFrameworkInitialized = true
+            CodeEditorView.isFrameworkInitialized = true
         }
     }()
     
     override init(frame rect: NSRect) {
-        _ = XcodeView.frameworkInitOnce
+        _ = CodeEditorView.frameworkInitOnce
         
         super.init(frame: rect)
         
@@ -132,14 +86,14 @@ class XcodeView: DVTSourceTextScrollView {
         codeView = DVTSourceTextView()
         codeView.layoutManager?.replaceTextStorage(codeStorage)
         codeView.isHorizontallyResizable = true
-        codeView.isAutomaticTextCompletionEnabled = true
         codeView.wrapsLines = WRAP
         codeView.allowsUndo = true
         codeView.maxSize = NSMakeSize(CGFloat.greatestFiniteMagnitude, CGFloat.greatestFiniteMagnitude)
         codeView.usesFindBar = true
+        codeView.delegate = self
 
         if !WRAP_ON_WORDS {
-            codeView.layoutManager?.typesetter = XcodeWrapAnywhereTypesetter()
+            codeView.layoutManager?.typesetter = CodeEditorWrapAnywhereTypesetter()
         }
         
         documentView = codeView
@@ -153,10 +107,18 @@ class XcodeView: DVTSourceTextScrollView {
             verticalRulerView = sidebarView
             hasVerticalRuler = true
             rulersVisible = true
-            
         }
     }
-
+    
+    func textDidChange(_ notification: Notification) {
+        guard let textView = notification.object as? NSTextView else { return }
+        print(textView.string)
+        if let font = NSFont(name: "SF Mono Medium", size: 19.0) {
+            let fullRange = NSMakeRange(0, self.codeView.string.count)
+            self.codeView.textStorage?.addAttribute(.font, value: font, range: fullRange)
+        }
+    }
+    
     @objc func undo() {
         self.codeView.undoManager?.undo()
     }
@@ -186,13 +148,13 @@ class XcodeView: DVTSourceTextScrollView {
             
             hasBeenSaved = true
         } catch {
-            print("Error saving file: \(error)")
+            print("error saving file: \(error)")
         }
     }
 
     
     deinit {
-        print("XcodeView: deinnit")
+        print("xcodeview: deinnit")
     }
 }
 

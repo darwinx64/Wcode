@@ -2,10 +2,15 @@ STRIP := $(shell command -v strip)
 WCODETMP := $(TMPDIR)/WCODE
 WCODE_STAGE_DIR := $(WCODETMP)/stage
 WCODE_APP_DIR := $(WCODETMP)/Build/Products/Release/WCODE.app
+CODE_SIGN := YES
 
 .PHONY: package
 
 package:
+	@if [ "$(CODE_SIGN)" = "NO" ]; then \
+		CODE_SIGN_IDENTITY=""; \
+		CODE_SIGNING_REQUIRED=NO; \
+	fi
 	# Build
 	@set -o pipefail; \
 		xcodebuild -jobs $(shell sysctl -n hw.ncpu) -project 'Wcode.xcodeproj' -scheme Wcode -configuration Release -sdk macosx -derivedDataPath $(WCODETMP) \
