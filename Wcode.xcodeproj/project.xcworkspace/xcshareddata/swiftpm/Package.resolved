@@ -1,5 +1,5 @@
 {
-  "originHash" : "a59c0a1e8568494796397be1aad592586ba4baddc98ca45e73e31e18a82c84f6",
+  "originHash" : "448c144ad1f2da0fa21d4269f87cb0e6436a6c9888afb51920850faf9548b9d8",
   "pins" : [
     {
       "identity" : "settings",
@@ -11,12 +11,12 @@
       }
     },
     {
-      "identity" : "swiftui-webview",
+      "identity" : "wcode-webview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/globulus/swiftui-webview",
+      "location" : "https://github.com/darwinx64/wcode-webview",
       "state" : {
-        "revision" : "f9be55089c020268760d626abbadd643a2b1ca4a",
-        "version" : "1.0.8"
+        "branch" : "main",
+        "revision" : "551dba54087f22afbb00a7584a59c58143cf6a9f"
       }
     }
   ],

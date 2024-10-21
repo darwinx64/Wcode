@@ -8,6 +8,7 @@
 import Foundation
 import Cocoa
 import SwiftUI
+import WcodeWebView
 
 struct CodeEditorViewWrapper: NSViewRepresentable {
     func makeNSView(context: Context) -> CodeEditorView {
@@ -19,6 +20,10 @@ struct CodeEditorViewWrapper: NSViewRepresentable {
 
 struct ContentView: View {
     @State private var showingInspector: Bool? = false
+    @State private var action = WebViewAction.idle
+    @State private var state = WebViewState.empty
+    @State private var urlString: String = "https://www.google.com/"
+    @State private var inspectorWidth: CGFloat = 0
     var body: some View {
         NavigationSplitView {
             List {
@@ -60,13 +65,34 @@ struct ContentView: View {
             get: { showingInspector ?? false },
             set: { newValue in showingInspector = newValue ? true : nil }
         ), content: {
-            BrowserView(showingInspector: $showingInspector)
-                .inspectorColumnWidth(min: 150, ideal: 350, max: 1000)
+            GeometryReader { geometry in
+                BrowserView(showingInspector: $showingInspector, action: $action, state: $state, urlString: $urlString)
+                    .onChange(of: geometry.size) {
+                        inspectorWidth = geometry.size.width
+                    }
+            }.inspectorColumnWidth(min: 150, ideal: 350, max: 500)
                 .toolbar() {
                     Button(action: toggleInspector) {
                         Image(systemName: "sidebar.right")
                             .help("Toggle Browser")
                     }
+                    if showingInspector ?? false {
+                        NavigationButton(action: {
+                            action = .goBack
+                        }, iconName: "chevron.backward")
+                        .disabled(!state.canGoBack)
+                        
+                        NavigationButton(action: {
+                            action = .goForward
+                        }, iconName: "chevron.forward")
+                        .disabled(!state.canGoForward)
+                    }
+                    TextField("", text: $urlString)
+                        .truncationMode(.tail)
+                        .frame(width: (inspectorWidth - 130))
+                        .onSubmit {
+                            
+                        }
                 }
         })
         

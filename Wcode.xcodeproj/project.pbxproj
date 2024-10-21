@@ -16,7 +16,7 @@
 		A2E06F882CC3AEAC007A6367 /* .all-contributorsrc in Resources */ = {isa = PBXBuildFile; fileRef = A25D34B52CC3A18F00D3E99F /* .all-contributorsrc */; };
 		A2ED9F412CC46E5900DDEAD5 /* Settings in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9F402CC46E5900DDEAD5 /* Settings */; };
 		A2ED9F4D2CC475F700DDEAD5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ED9F4C2CC475F700DDEAD5 /* main.swift */; };
-		A2ED9F582CC4BD0B00DDEAD5 /* SwiftUIWebView in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9F572CC4BD0B00DDEAD5 /* SwiftUIWebView */; };
+		A2ED9F782CC67F4A00DDEAD5 /* WcodeWebView in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9F772CC67F4A00DDEAD5 /* WcodeWebView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,6 @@
 				About/Views/TrackableScrollView.swift,
 				Browser/BrowserView.swift,
 				Browser/NavigationButton.swift,
-				Browser/URLTextField.swift,
 				CodeEditor/CodeEditorView.swift,
 				CodeEditor/CodeEditorViewSettings.swift,
 				CodeEditor/CodeEditorWrapAnywhereTypesetter.swift,
@@ -65,10 +64,19 @@
 			);
 			target = 33D5E1E22B60B96E00B9BD84 /* Wcode */;
 		};
+		A2ED9F742CC6714900DDEAD5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Apply.swift,
+				Colour.swift,
+			);
+			target = 33D5E1E22B60B96E00B9BD84 /* Wcode */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A25D34A22CC39FCB00D3E99F /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A25D34AC2CC39FD600D3E99F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+		A2ED9F682CC61A6A00DDEAD5 /* Utils */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (A2ED9F742CC6714900DDEAD5 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Utils; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +86,8 @@
 			files = (
 				A2ED9F412CC46E5900DDEAD5 /* Settings in Frameworks */,
 				A2A019072CC37D1D00AF7C30 /* DVTKit.framework in Frameworks */,
-				A2ED9F582CC4BD0B00DDEAD5 /* SwiftUIWebView in Frameworks */,
 				33D5E2182B60D68000B9BD84 /* DVTFoundation.framework in Frameworks */,
+				A2ED9F782CC67F4A00DDEAD5 /* WcodeWebView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,7 @@
 		33D5E1E52B60B96E00B9BD84 /* Wcode */ = {
 			isa = PBXGroup;
 			children = (
+				A2ED9F682CC61A6A00DDEAD5 /* Utils */,
 				A25D34A22CC39FCB00D3E99F /* Features */,
 				3348C0ED2B614FE300764DD9 /* Info.plist */,
 				A2ED9F4C2CC475F700DDEAD5 /* main.swift */,
@@ -197,7 +206,7 @@
 			mainGroup = 33D5E1DA2B60B96E00B9BD84;
 			packageReferences = (
 				A2ED9F3F2CC46E5900DDEAD5 /* XCRemoteSwiftPackageReference "Settings" */,
-				A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */,
+				A2ED9F762CC67F4A00DDEAD5 /* XCRemoteSwiftPackageReference "wcode-webview" */,
 			);
 			productRefGroup = 33D5E1E42B60B96E00B9BD84 /* Products */;
 			projectDirPath = "";
@@ -455,12 +464,12 @@
 				minimumVersion = 3.1.1;
 			};
 		};
-		A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */ = {
+		A2ED9F762CC67F4A00DDEAD5 /* XCRemoteSwiftPackageReference "wcode-webview" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/globulus/swiftui-webview";
+			repositoryURL = "https://github.com/darwinx64/wcode-webview";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.8;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -471,10 +480,10 @@
 			package = A2ED9F3F2CC46E5900DDEAD5 /* XCRemoteSwiftPackageReference "Settings" */;
 			productName = Settings;
 		};
-		A2ED9F572CC4BD0B00DDEAD5 /* SwiftUIWebView */ = {
+		A2ED9F772CC67F4A00DDEAD5 /* WcodeWebView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = A2ED9F562CC4BD0B00DDEAD5 /* XCRemoteSwiftPackageReference "swiftui-webview" */;
-			productName = SwiftUIWebView;
+			package = A2ED9F762CC67F4A00DDEAD5 /* XCRemoteSwiftPackageReference "wcode-webview" */;
+			productName = WcodeWebView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

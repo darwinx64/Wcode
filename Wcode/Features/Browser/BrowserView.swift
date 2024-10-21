@@ -2,12 +2,12 @@
 //  ContentView.swift
 //  Wcode
 //
-//  Created by tiramisu on 10/19/24.
+//  Created by paige on 10/19/24.
 //
 
 import SwiftUI
 import WebKit
-import SwiftUIWebView
+import WcodeWebView
 
 /// detect if user clicks mouse back/forward btn
 class MouseEventView: NSView {
@@ -62,17 +62,11 @@ struct NavigationIndicator: View {
     }
 }
 
-extension View {
-    func apply<V: View>(@ViewBuilder _ block: (Self) -> V) -> V { block(self) }
-}
-
 struct BrowserView: View {
     @Binding var showingInspector: Bool?
-    
-    @State private var urlString: String = "https://www.apple.com"
-    
-    @State private var action = WebViewAction.idle
-    @State private var state = WebViewState.empty
+    @Binding var urlString: String
+    @Binding var action: WebViewAction
+    @Binding var state: WebViewState
 
     private var refreshAnimationDuration: Double = 0.3
     
@@ -81,8 +75,11 @@ struct BrowserView: View {
     @State private var backDown = false
     @State private var forwardDown = false
     
-    init(showingInspector: Binding<Bool?> = Binding.constant(nil)) {
+    init(showingInspector: Binding<Bool?> = Binding.constant(nil), action: Binding<WebViewAction>, state: Binding<WebViewState>, urlString: Binding<String>) {
         self._showingInspector = showingInspector
+        self._action = action
+        self._state = state
+        self._urlString = urlString
     }
     
     var body: some View {
@@ -133,40 +130,12 @@ struct BrowserView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .toolbar {
-            ToolbarItemGroup {
-                if showingInspector ?? false {
-                    NavigationButton(action: {
-                        action = .goBack
-                    }, iconName: "chevron.backward", isVisible: state.canGoBack && (showingInspector ?? false))
-                    
-                    NavigationButton(action: {
-                        action = .goForward
-                    }, iconName: "chevron.forward", isVisible: state.canGoForward && (showingInspector ?? false))
-                    
-                    ZStack(alignment: .trailing) {
-                        URLTextField(urlString: $urlString, onSubmit: loadUrl)
-                        
-                        Button(action: {
-                            action = .reload
-                            refreshRotationDegrees += 360
-                        }) {
-                            Image(systemName: "arrow.clockwise")
-                                .font(.system(size: 10, weight: .light))
-                                .tint(.primary.opacity(0.5))
-                                .rotationEffect(.degrees(refreshRotationDegrees))
-                                .animation(.easeInOut(duration: refreshAnimationDuration), value: refreshRotationDegrees)
-                        }
-                        .buttonStyle(NavigationButtonStyle())
-                        .padding(.trailing, 3)
-                        .scaleEffect((showingInspector ?? false) ? 1 : 0)
-                    }
-                }
-            }
-        }
         .padding(.top, 0)
         .background(Rectangle().fill(.ultraThinMaterial))
         .onAppear {
+            loadUrl()
+        }
+        .onChange(of: urlString) {
             loadUrl()
         }
     }
@@ -176,9 +145,4 @@ struct BrowserView: View {
             action = .load(URLRequest(url: url))
         }
     }
-}
-
-
-#Preview {
-    BrowserView()
 }
