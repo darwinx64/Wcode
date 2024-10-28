@@ -80,10 +80,10 @@ struct WorkspaceView: View {
                             
                         }
                 }
-        }).sheet(isPresented: $isPresented) {
+        })/*.sheet(isPresented: $isPresented) {
             WelcomeSheet()
                 .presentationBackground(.ultraThinMaterial)
-        }
+        }*/
         
     }
     private func toggleSidebar() {
