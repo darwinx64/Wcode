@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIWebView
 
 struct NavigationButtonStyle: ButtonStyle {
     public var buttonSpring: Animation = .interpolatingSpring(stiffness: 210, damping: 20)

@@ -1,5 +1,5 @@
 {
-  "originHash" : "448c144ad1f2da0fa21d4269f87cb0e6436a6c9888afb51920850faf9548b9d8",
+  "originHash" : "6afa9bd8033a88895c1979fbf7cb7a26d0a7e0df005fd9bc2a0443e3b2e380ff",
   "pins" : [
     {
       "identity" : "settings",
@@ -16,7 +16,16 @@
       "location" : "https://github.com/darwinx64/wcode-webview",
       "state" : {
         "branch" : "main",
-        "revision" : "551dba54087f22afbb00a7584a59c58143cf6a9f"
+        "revision" : "59914c32c54cda156d1fc570697fecef53b890a2"
+      }
+    },
+    {
+      "identity" : "whatsnewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SvenTiigi/WhatsNewKit",
+      "state" : {
+        "revision" : "6157c77e8be9b3d2310bc680681b61a8d9e290ac",
+        "version" : "2.2.1"
       }
     }
   ],
